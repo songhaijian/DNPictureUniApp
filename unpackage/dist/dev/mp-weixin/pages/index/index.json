@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "home-album": "/pages/index/home-album/home-album",
+    "home-category": "/pages/index/home-category/home-category",
+    "home-new": "/pages/index/home-new/home-new",
+    "home-recommend": "/pages/index/home-recommend/home-recommend",
+    "uni-segmented-control": "/node-modules/@dcloudio/uni-ui/lib/uni-segmented-control/uni-segmented-control"
+  }
+}
