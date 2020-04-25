@@ -24,6 +24,9 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.recommend_scv {
+  height: calc(100vh - 36px);
+}
 .recommend_wrap {
   display: -webkit-box;
   display: -webkit-flex;

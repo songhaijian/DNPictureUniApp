@@ -1,6 +1,7 @@
 export default (params) => {
 	uni.showLoading({
-		title: "加载中..."
+		title: "加载中...",
+		mask: true
 	})
 	return new Promise((resolve, reject) => {
 		wx.request({

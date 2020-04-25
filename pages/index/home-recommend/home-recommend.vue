@@ -1,10 +1,10 @@
 <template>
-	<view>
+	<scroll-view scroll-y="true" class="recommend_scv" @scrolltolower="handleReachBottom">
 		<!-- 推荐开始 -->
 		<view class="recommend_wrap">
-			<view class="recommend_item" v-for="item in recomendList" :key="item.id">
+			<navigator :url="'/pages/album-detail/album-detail?id=' + item.target" class="recommend_item" v-for="item in recomendList" :key="item.id">
 				<image :src="item.thumb" mode="widthFix"></image>
-			</view>
+			</navigator>
 		</view>
 		<!-- 推荐结束 -->
 		<!-- 月份开始 -->
@@ -46,7 +46,7 @@
 			</view>
 		</view>
 		<!-- 热门结束 -->
-	</view>
+	</scroll-view>
 </template>
 
 <script>
@@ -56,32 +56,65 @@
 			return {
 				recomendList: [],
 				monthObj: {},
-				hotList: []
-			}
-		},
-		mounted() {
-			this.request({
-				url: "http://157.122.54.189:9088/image/v3/homepage/vertical",
-				data: {
+				hotList: [],
+				requestParam: {
 					limit: 30,
 					order: "hot",
 					skip: 0
-				}
-			}).then(result => {
-				// 推荐数据
-				this.recomendList = result.res.homepage[1].items
-				//月份数据
-				this.monthObj = result.res.homepage[2]
-				this.monthObj.Month = monentUtils(this.monthObj.stime).format("MM")
-				this.monthObj.Day = monentUtils(this.monthObj.stime).format("DD")
-				// 热门数据
-				this.hotList = result.res.vertical
+				},
+				hasMoreData: true
+			}
+		},
+		mounted() {
+			uni.setNavigationBarTitle({
+				title: "推荐"
 			})
+			this.getList()
+		},
+		methods: {
+			handleReachBottom() {
+				if (this.hasMoreData) {
+					this.requestParam.skip += this.requestParam.limit
+					this.getList()
+				} else {
+					uni.showToast({
+						title: "没有更多数据了",
+						icon: "none"
+					})
+				}
+
+			},
+			// 获取热门列表数据
+			getList() {
+				this.request({
+					url: "http://157.122.54.189:9088/image/v3/homepage/vertical",
+					data: this.requestParam
+				}).then(result => {
+					if (result.res.vertical.length === 0) {
+						this.hasMoreData = false
+						return;
+					}
+					if (this.recomendList.length === 0) {
+						// 推荐数据
+						this.recomendList = result.res.homepage[1].items
+						//月份数据
+						this.monthObj = result.res.homepage[2]
+						this.monthObj.Month = monentUtils(this.monthObj.stime).format("MM")
+						this.monthObj.Day = monentUtils(this.monthObj.stime).format("DD")
+					}
+					// 热门数据
+					this.hotList = [...this.hotList, ...result.res.vertical]
+				})
+			}
 		}
 	}
 </script>
 
 <style lang="scss">
+	.recommend_scv {
+		height: calc(100vh - 36px);
+	}
+
 	.recommend_wrap {
 		display: flex;
 		flex-wrap: wrap;
