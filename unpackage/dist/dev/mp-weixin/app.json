@@ -5,7 +5,8 @@
     "pages/video/video",
     "pages/search/search",
     "pages/mine/mine",
-    "pages/album-detail/album-detail"
+    "pages/album-detail/album-detail",
+    "pages/img-detail/img-detail"
   ],
   "subPackages": [],
   "window": {

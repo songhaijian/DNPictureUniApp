@@ -30,6 +30,11 @@
 			"style": {
 				"navigationBarTitleText": "专辑详情"
 			}
+		}, {
+			"path": "pages/img-detail/img-detail",
+			"style": {
+				"navigationBarTitleText": "图片详情"
+			}
 		}
 	],
 	"globalStyle": {

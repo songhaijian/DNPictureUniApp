@@ -2,7 +2,8 @@
 	<scroll-view scroll-y="true" class="recommend_scv" @scrolltolower="handleReachBottom">
 		<!-- 推荐开始 -->
 		<view class="recommend_wrap">
-			<navigator :url="'/pages/album-detail/album-detail?id=' + item.target" class="recommend_item" v-for="item in recomendList" :key="item.id">
+			<navigator :url="'/pages/album-detail/album-detail?id=' + item.target" class="recommend_item" v-for="item in recomendList"
+			 :key="item.id">
 				<image :src="item.thumb" mode="widthFix"></image>
 			</navigator>
 		</view>
@@ -28,7 +29,7 @@
 				</view>
 			</view>
 			<view class="month_content">
-				<view class="month_content_item" v-for="item in monthObj.items" :key="item.id">
+				<view class="month_content_item" v-for="(item,index) in monthObj.items" :key="item.id" @click="handleGoToImgDetail(monthObj.items,index)">
 					<image :src="item.thumb+item.rule.replace('$<Height>',360)" mode="aspectFill"></image>
 				</view>
 			</view>
@@ -40,7 +41,7 @@
 				热门
 			</view>
 			<view class="hot_content">
-				<view class="hot_content_item" v-for="item in hotList" :key="item.id">
+				<view class="hot_content_item" v-for="(item,index) in hotList" :key="item.id" @click="handleGoToImgDetail(hotList,index)">
 					<image :src="item.thumb" mode="widthFix"></image>
 				</view>
 			</view>
@@ -72,6 +73,7 @@
 			this.getList()
 		},
 		methods: {
+			//到达底部
 			handleReachBottom() {
 				if (this.hasMoreData) {
 					this.requestParam.skip += this.requestParam.limit
@@ -104,6 +106,14 @@
 					}
 					// 热门数据
 					this.hotList = [...this.hotList, ...result.res.vertical]
+				})
+			},
+			//点击跳转图片详情
+			handleGoToImgDetail(imgList, imgIndex) {
+				getApp().globalData.imgList = imgList
+				getApp().globalData.imgIndex = imgIndex
+				uni.navigateTo({
+					url: "/pages/img-detail/img-detail"
 				})
 			}
 		}

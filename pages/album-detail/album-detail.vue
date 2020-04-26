@@ -25,7 +25,7 @@
 			</view>
 		</view>
 		<view class="album_detail_list">
-			<view class="album_detail_list_item" v-for="item in wallpaperList" :key="item.id">
+			<view class="album_detail_list_item" v-for="(item,index) in wallpaperList" :key="item.id" @click="handleGoToImgDetail(wallpaperList,index)">
 				<image :src="item.thumb+item.rule.replace('$<Height>',360)" mode="widthFix"></image>
 			</view>
 		</view>
@@ -85,6 +85,14 @@
 					}
 					this.wallpaperList = [...this.wallpaperList, ...result.res.wallpaper]
 				});
+			},
+			//点击跳转图片详情
+			handleGoToImgDetail(imgList, imgIndex) {
+				getApp().globalData.imgList = imgList
+				getApp().globalData.imgIndex = imgIndex
+				uni.navigateTo({
+					url: "/pages/img-detail/img-detail"
+				})
 			}
 		}
 	}

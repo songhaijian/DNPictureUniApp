@@ -1,0 +1,209 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.user_info.data-v-87859316 {
+  padding: 20rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.user_info .user_icon.data-v-87859316 {
+  padding: 0 20rpx;
+}
+.user_info .user_icon image.data-v-87859316 {
+  width: 90rpx;
+  border-radius: 50%;
+}
+.user_info .user_desc .user_name.data-v-87859316 {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: 500;
+}
+.user_info .user_desc .user_time.data-v-87859316 {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.rank_collect_wrap.data-v-87859316 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 80rpx;
+  border-bottom: 1rpx solid #ccc;
+  border-top: 1rpx solid #ccc;
+}
+.rank_collect_wrap .rank_wrap.data-v-87859316 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.rank_collect_wrap .collect_wrap.data-v-87859316 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.about_wrap.data-v-87859316 {
+  padding-left: 10rpx;
+}
+.about_wrap .about_title.data-v-87859316 {
+  color: #000;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+}
+.about_wrap .about_item.data-v-87859316 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.about_wrap .about_item .about_item_img.data-v-87859316 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.about_wrap .about_item .about_item_img image.data-v-87859316 {
+  width: 100%;
+}
+.about_wrap .about_item .about_item_info.data-v-87859316 {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+  margin-left: 10rpx;
+}
+.about_wrap .about_item .about_item_info .about_item_album.data-v-87859316 {
+  background-color: #d4237a;
+  color: #fff;
+  border-radius: 10rpx;
+  width: 100rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+.about_wrap .about_item .about_item_info .about_item_name.data-v-87859316 {
+  margin-top: 10rpx;
+  color: #000;
+  font-size: 30rpx;
+}
+.about_wrap .about_item .about_item_jiantou.data-v-87859316 {
+  -webkit-box-flex: 0.5;
+  -webkit-flex: 0.5;
+          flex: 0.5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.hot_comment_wrap .hot_comment_title_wrap.data-v-87859316 {
+  padding: 10rpx;
+}
+.hot_comment_wrap .hot_comment_title_wrap .icon-hot.data-v-87859316 {
+  color: #d4237a;
+}
+.hot_comment_wrap .hot_comment_title_wrap .hot_comment_title.data-v-87859316 {
+  color: #000;
+  margin-left: 10rpx;
+}
+.hot_comment_wrap .hot_comment_item.data-v-87859316 {
+  padding: 10rpx;
+  border-bottom: 10rpx solid #eee;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_user_wrap.data-v-87859316 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_user_wrap .hot_comment_item_user_icon.data-v-87859316 {
+  width: 15%;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_user_wrap .hot_comment_item_user_icon image.data-v-87859316 {
+  width: 100%;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_user_wrap .hot_comment_item_user_info.data-v-87859316 {
+  margin-left: 10rpx;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_user_wrap .hot_comment_item_user_info .hot_comment_item_user_name.data-v-87859316 {
+  color: #ccc;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_user_wrap .hot_comment_item_user_info .hot_comment_item_user_time.data-v-87859316 {
+  margin-top: 10rpx;
+  color: #999;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_user_wrap .hot_comment_item_user_badge.data-v-87859316 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_user_wrap .hot_comment_item_user_badge .hot_comment_item_user_badge_item image.data-v-87859316 {
+  width: 40rpx;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_comment_wrap.data-v-87859316 {
+  margin-left: 15%;
+  padding-left: 10rpx;
+  margin-top: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_comment_wrap .hot_comment_item_comment_text.data-v-87859316 {
+  color: #000;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.hot_comment_wrap .hot_comment_item .hot_comment_item_comment_wrap .hot_comment_item_comment_zan .hot_comment_item_comment_zan_count.data-v-87859316 {
+  margin-left: 10rpx;
+}
+.comment_icon.data-v-87859316 {
+  color: aqua !important;
+}
+
