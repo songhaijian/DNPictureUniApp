@@ -35,6 +35,11 @@
 			"style": {
 				"navigationBarTitleText": "图片详情"
 			}
+		}, {
+			"path": "pages/category-detail/category-detail",
+			"style": {
+				"navigationBarTitleText": "图片分类详情"
+			}
 		}
 	],
 	"globalStyle": {

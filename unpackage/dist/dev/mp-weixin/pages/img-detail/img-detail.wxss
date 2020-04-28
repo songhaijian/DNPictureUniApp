@@ -206,4 +206,16 @@
 .comment_icon.data-v-87859316 {
   color: aqua !important;
 }
+.download_img_wrap.data-v-87859316 {
+  margin: 20rpx auto;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  width: 90%;
+  height: 80rpx;
+  background-color: #d4237a;
+  color: #fff;
+  font-size: 40rpx;
+  font-weight: 500;
+}
 

@@ -16,7 +16,7 @@
 		</view>
 		<!-- 用户信息结束 -->
 		<!-- 高清大图开始 -->
-		<swiper-action>
+		<swiper-action @swiperAction="handlerSwiperAction">
 			<image :src="imgDetailObj.thumb" mode="widthFix"></image>
 		</swiper-action>
 		<!-- 高清大图结束 -->
@@ -126,6 +126,11 @@
 			</view>
 		</view>
 		<!-- 最新评论结束 -->
+		<!-- 下载图片开始 -->
+		<view class="download_img_wrap" @click="handleDownloadImg">
+			下载图片
+		</view>
+		<!-- 下载图片结束 -->
 	</view>
 </template>
 
@@ -142,21 +147,24 @@
 				imgDetailObj: {},
 				aboutList: [],
 				hotList: [],
-				commentList: []
+				commentList: [],
+				imgList: [],
+				imgIndex: 0
 			}
 		},
 		onLoad() {
-			const {
-				imgList,
-				imgIndex
-			} = getApp().globalData
-			this.imgDetailObj = imgList[imgIndex]
-			this.imgDetailObj.bigHighImg = this.imgDetailObj.thumb + this.imgDetailObj.rule.replace("$<Height>", 360)
-			this.imgDetailObj.newDate = momentUtils(this.imgDetailObj.atime * 1000).fromNow()
-			this.getCommentData(this.imgDetailObj.id)
-			// this.getCommentData("5d2d9a3be7bce720b5774610")
+			this.imgIndex = getApp().globalData.imgIndex
+			this.imgList = getApp().globalData.imgList
+			this.getPageData()
 		},
 		methods: {
+			//获取页面数据
+			getPageData() {
+				this.imgDetailObj = this.imgList[this.imgIndex]
+				this.imgDetailObj.bigHighImg = this.imgDetailObj.thumb + this.imgDetailObj.rule.replace("$<Height>", 360)
+				this.imgDetailObj.newDate = momentUtils(this.imgDetailObj.atime * 1000).fromNow()
+				this.getCommentData(this.imgDetailObj.id)
+			},
 			//获取评论数据
 			getCommentData(imgId) {
 				this.request({
@@ -167,6 +175,37 @@
 					this.hotList.forEach(v => v.newTime = momentUtils(v.atime * 1000).fromNow())
 					this.commentList = result.res.comment
 					this.commentList.forEach(v => v.newTime = momentUtils(v.atime * 1000).fromNow())
+				})
+			},
+			//滑动监听
+			handlerSwiperAction(event) {
+				if (event.swiperDirection == "left" && this.imgIndex < this.imgList.length - 1) {
+					this.imgIndex++
+					this.getPageData()
+				} else if (event.swiperDirection == "right" && this.imgIndex > 0) {
+					this.imgIndex--
+					this.getPageData()
+				} else {
+					uni.showToast({
+						title: "没有数据了",
+						icon: "none"
+					})
+				}
+			},
+			//下载图片
+			async handleDownloadImg() {
+				await uni.showLoading({
+					title: "下载中..."
+				})
+				const tempFile = await uni.downloadFile({
+					url: this.imgDetailObj.img
+				})
+				const imgRes = await uni.saveImageToPhotosAlbum({
+					filePath: tempFile[1].tempFilePath
+				})
+				await uni.hideLoading()
+				await uni.showToast({
+					title: "下载成功"
 				})
 			}
 		}
@@ -353,5 +392,18 @@
 
 	.comment_icon {
 		color: aqua !important;
+	}
+
+	.download_img_wrap {
+		margin: 20rpx auto;
+		text-align: center;
+		line-height: 80rpx;
+		border-radius: 10rpx;
+		width: 90%;
+		height: 80rpx;
+		background-color: $base-color;
+		color: #fff;
+		font-size: 40rpx;
+		font-weight: 500;
 	}
 </style>

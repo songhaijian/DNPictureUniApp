@@ -6,7 +6,8 @@
     "pages/search/search",
     "pages/mine/mine",
     "pages/album-detail/album-detail",
-    "pages/img-detail/img-detail"
+    "pages/img-detail/img-detail",
+    "pages/category-detail/category-detail"
   ],
   "subPackages": [],
   "window": {
@@ -53,5 +54,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap27.json"
 }

@@ -26,7 +26,7 @@
 		</view>
 		<view class="album_detail_list">
 			<view class="album_detail_list_item" v-for="(item,index) in wallpaperList" :key="item.id" @click="handleGoToImgDetail(wallpaperList,index)">
-				<image :src="item.thumb+item.rule.replace('$<Height>',360)" mode="widthFix"></image>
+				<image :src="item.thumb+item.rule.replace('$<Height>',360)" mode="aspectFill"></image>
 			</view>
 		</view>
 	</view>
@@ -155,6 +155,10 @@
 		.album_detail_list_item {
 			width: 33.33%;
 			border: 5rpx solid #fff;
+
+			image {
+				height: 160rpx;
+			}
 		}
 	}
 </style>

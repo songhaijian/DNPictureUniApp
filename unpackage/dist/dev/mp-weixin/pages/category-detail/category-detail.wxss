@@ -24,66 +24,41 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.album_detail_top {
-  position: relative;
-}
-.album_detail_top .album_detail_top_info {
-  position: absolute;
-  left: 0;
-  bottom: 20rpx;
-  color: #fff;
+.category_detail_tab_wrap.data-v-6dfc8d57 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  padding: 0 20rpx;
+}
+.category_detail_tab_wrap .category_detail_tab.data-v-6dfc8d57 {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5;
+          flex: 5;
+  margin: 0 100rpx;
+}
+.category_detail_tab_wrap .category_detail_tab_search.data-v-6dfc8d57 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  width: 100%;
 }
-.album_detail_top .album_detail_top_info .album_detail_top_info_name {
-  font-size: 40rpx;
-}
-.album_detail_top .album_detail_top_info .album_detail_top_info_btn {
-  background-color: #d4237a;
-  padding: 10rpx;
-  border-radius: 10rpx;
-}
-.album_detail_info {
-  padding: 20rpx;
-}
-.album_detail_info .album_detail_user_info {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-}
-.album_detail_info .album_detail_user_info image {
-  width: 50rpx;
-}
-.album_detail_info .album_detail_user_info .album_detail_nickname {
-  font-size: 30rpx;
-  font-weight: 600;
-  color: #000;
-  margin-left: 20rpx;
-}
-.album_detail_info .album_detail_user_desc {
-  margin-top: 10rpx;
-}
-.album_detail_list {
+.scroll_wrap.data-v-6dfc8d57 {
+  height: calc(100vh - 36px);
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.album_detail_list .album_detail_list_item {
-  width: 33.33%;
+.scroll_wrap .categoty_detail_item.data-v-6dfc8d57 {
   border: 5rpx solid #fff;
-}
-.album_detail_list .album_detail_list_item image {
-  height: 160rpx;
+  width: 33.33%;
 }
 
