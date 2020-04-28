@@ -2200,7 +2200,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("v-uni-view", { attrs: { _i: 0 } }, [_vm._v("\n\t横屏\n")])
+  return _c("v-uni-view", { attrs: { _i: 0 } }, [
+    _vm._v("\n\t接口文档地址：https://www.showdoc.cc/414855720281749\n")
+  ])
 }
 var recyclableRender = false
 var staticRenderFns = []
