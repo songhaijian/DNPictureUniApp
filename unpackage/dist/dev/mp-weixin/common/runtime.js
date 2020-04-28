@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"pages/index/home-recommend/home-recommend":1,"node-modules/@dcloudio/uni-ui/lib/uni-segmented-control/uni-segmented-control":1,"pages/index/home-album/home-album":1,"pages/index/home-category/home-category":1};
+/******/ 		var cssChunks = {"pages/index/home-recommend/home-recommend":1,"node-modules/@dcloudio/uni-ui/lib/uni-segmented-control/uni-segmented-control":1,"pages/index/home-album/home-album":1,"pages/index/home-category/home-category":1,"pages/video/video-commen/video-commen":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"pages/index/home-recommend/home-recommend":"pages/index/home-recommend/home-recommend","node-modules/@dcloudio/uni-ui/lib/uni-segmented-control/uni-segmented-control":"node-modules/@dcloudio/uni-ui/lib/uni-segmented-control/uni-segmented-control","pages/index/home-album/home-album":"pages/index/home-album/home-album","pages/index/home-category/home-category":"pages/index/home-category/home-category","pages/index/home-new/home-new":"pages/index/home-new/home-new","components/swiper-action":"components/swiper-action"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"pages/index/home-recommend/home-recommend":"pages/index/home-recommend/home-recommend","node-modules/@dcloudio/uni-ui/lib/uni-segmented-control/uni-segmented-control":"node-modules/@dcloudio/uni-ui/lib/uni-segmented-control/uni-segmented-control","pages/index/home-album/home-album":"pages/index/home-album/home-album","pages/index/home-category/home-category":"pages/index/home-category/home-category","pages/index/home-new/home-new":"pages/index/home-new/home-new","pages/video/video-category/video-category":"pages/video/video-category/video-category","pages/video/video-commen/video-commen":"pages/video/video-commen/video-commen","components/swiper-action":"components/swiper-action"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

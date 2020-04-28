@@ -1,12 +1,15 @@
 <template>
-	<view class="caterory_wrap">
-		<view class="caterory_item" v-for="(item,index) in categoryList" :key="item.id" @click="handleItemClick(item.id)">
-			<image :src="item.cover" mode="aspectFill"></image>
-			<view class="caterory_item_name">
-				{{item.name}}
+	<scroll-view class="caterory_wrap" scroll-y="true">
+		<view class="category_list_wrap">
+			<view class="caterory_item" v-for="(item,index) in categoryList" :key="item.id" @click="handleItemClick(item.id)">
+				<image :src="item.cover" mode="aspectFill"></image>
+				<view class="caterory_item_name">
+					{{item.name}}
+				</view>
 			</view>
 		</view>
-	</view>
+
+	</scroll-view>
 </template>
 
 <script>
@@ -43,33 +46,37 @@
 
 <style lang="scss" scoped>
 	.caterory_wrap {
-		display: flex;
-		flex-wrap: wrap;
+		height: calc(100vh - 36px);
 
-		.caterory_item {
-			width: 33.33%;
-			position: relative;
-			border: 5rpx solid #fff;
+		.category_list_wrap {
+			display: flex;
+			flex-wrap: wrap;
+			.caterory_item {
+				width: 33.33%;
+				position: relative;
+				border: 5rpx solid #fff;
 
-			image {
-				width: 100%;
-				height: 240rpx;
-			}
+				image {
+					width: 100%;
+					height: 240rpx;
+				}
 
-			.caterory_item_name {
-				width: 100%;
-				height: 60rpx;
-				left: 0;
-				bottom: 0;
-				color: #fff;
-				display: flex;
-				padding-left: 10rpx;
-				align-items: center;
-				position: absolute;
-				font-size: 35rpx;
-				font-weight: 500;
-				background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+				.caterory_item_name {
+					width: 100%;
+					height: 60rpx;
+					left: 0;
+					bottom: 0;
+					color: #fff;
+					display: flex;
+					padding-left: 10rpx;
+					align-items: center;
+					position: absolute;
+					font-size: 35rpx;
+					font-weight: 500;
+					background-image: linear-gradient(to right top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+				}
 			}
 		}
+
 	}
 </style>

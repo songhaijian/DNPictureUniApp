@@ -8,10 +8,12 @@
 			</view>
 		</view>
 		<scroll-view scroll-y="true" class="scroll_wrap" enable-flex @scrolltolower="handleScrolltolower">
-			<view class="categoty_detail_item" v-for="(item,index) in listData" :key="item.id" @click="handleGoToImgDetail(listData,index)">
-				<image :src="
-			 item.thumb" mode="widthFix">
-				</image>
+			<view class="view_wrap">
+				<view class="categoty_detail_item" v-for="(item,index) in listData" :key="item.id" @click="handleGoToImgDetail(listData,index)">
+					<image :src="
+				 item.thumb" mode="widthFix">
+					</image>
+				</view>
 			</view>
 		</scroll-view>
 	</view>
@@ -103,12 +105,16 @@
 
 	.scroll_wrap {
 		height: calc(100vh - 36px);
-		display: flex;
-		flex-wrap: wrap;
 
-		.categoty_detail_item {
-			border: 5rpx solid #fff;
-			width: 33.33%;
+		.view_wrap {
+			display: flex;
+			flex-wrap: wrap;
+
+			.categoty_detail_item {
+				border: 5rpx solid #fff;
+				width: 33.33%;
+			}
 		}
+
 	}
 </style>

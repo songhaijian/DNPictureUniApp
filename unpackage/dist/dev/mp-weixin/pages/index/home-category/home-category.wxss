@@ -25,22 +25,25 @@
 /* 透明度 */
 /* 文章场景相关 */
 .caterory_wrap.data-v-71fabf9c {
+  height: calc(100vh - 36px);
+}
+.caterory_wrap .category_list_wrap.data-v-71fabf9c {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.caterory_wrap .caterory_item.data-v-71fabf9c {
+.caterory_wrap .category_list_wrap .caterory_item.data-v-71fabf9c {
   width: 33.33%;
   position: relative;
   border: 5rpx solid #fff;
 }
-.caterory_wrap .caterory_item image.data-v-71fabf9c {
+.caterory_wrap .category_list_wrap .caterory_item image.data-v-71fabf9c {
   width: 100%;
   height: 240rpx;
 }
-.caterory_wrap .caterory_item .caterory_item_name.data-v-71fabf9c {
+.caterory_wrap .category_list_wrap .caterory_item .caterory_item_name.data-v-71fabf9c {
   width: 100%;
   height: 60rpx;
   left: 0;

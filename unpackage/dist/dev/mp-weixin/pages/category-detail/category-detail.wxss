@@ -51,13 +51,15 @@
 }
 .scroll_wrap.data-v-6dfc8d57 {
   height: calc(100vh - 36px);
+}
+.scroll_wrap .view_wrap.data-v-6dfc8d57 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.scroll_wrap .categoty_detail_item.data-v-6dfc8d57 {
+.scroll_wrap .view_wrap .categoty_detail_item.data-v-6dfc8d57 {
   border: 5rpx solid #fff;
   width: 33.33%;
 }

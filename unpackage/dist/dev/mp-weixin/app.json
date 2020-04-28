@@ -7,7 +7,8 @@
     "pages/mine/mine",
     "pages/album-detail/album-detail",
     "pages/img-detail/img-detail",
-    "pages/category-detail/category-detail"
+    "pages/category-detail/category-detail",
+    "pages/video-detail/video-detail"
   ],
   "subPackages": [],
   "window": {
@@ -54,6 +55,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap27.json"
+  "usingComponents": {}
 }

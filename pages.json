@@ -41,7 +41,11 @@
 				"navigationBarTitleText": "图片分类详情"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/video-detail/video-detail",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "懂你找图",
